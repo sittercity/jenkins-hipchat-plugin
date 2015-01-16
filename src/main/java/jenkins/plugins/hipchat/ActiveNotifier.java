@@ -147,10 +147,10 @@ public class ActiveNotifier implements FineGrainedNotifier {
             Result previousResult = (previousBuild != null) ? previousBuild.getResult() : Result.SUCCESS;
             if (result == Result.SUCCESS && previousResult == Result.FAILURE) return "Back to normal";
             if (result == Result.SUCCESS) return "Success";
-            if (result == Result.FAILURE) return "<b>FAILURE</b>";
+            if (result == Result.FAILURE) return "@here -> <b>FAILURE!</b> Build broken!";
             if (result == Result.ABORTED) return "ABORTED";
             if (result == Result.NOT_BUILT) return "Not built";
-            if (result == Result.UNSTABLE) return "Unstable";
+            if (result == Result.UNSTABLE) return "@here -> Unstable";
             return "Unknown";
         }
 
